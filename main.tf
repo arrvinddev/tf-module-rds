@@ -32,10 +32,10 @@ resource "aws_security_group" "main" {
 }
 
 resource "aws_db_subnet_group" "main" {
-  name       = "${var.name}-${var.env}-sg"
+  name       = "${var.name}-${var.env}-sng"
   subnet_ids = [aws_subnet.frontend.id, aws_subnet.backend.id]
 
-  tags = merge(var.tags, {Name= "${var.name}-${var.env}-sg"})
+  tags = merge(var.tags, {Name= "${var.name}-${var.env}-sng"})
 }
 
 
